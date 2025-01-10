@@ -8,13 +8,17 @@ document.querySelector('form').addEventListener('submit', function(event) {
     const phone = document.getElementById('phone').value;
     const description = document.getElementById('description').value;
 
-    const subject = `Photography Inquiry from ${name}`;
-    const body = `Name: ${name}%0D%0A
-                  Wedding Date: ${date}%0D%0A
-                  Location: ${location}%0D%0A
-                  Email: ${email}%0D%0A
-                  Phone: ${phone}%0D%0A
-                  Description: ${description}`;
-
-    window.location.href = `mailto:davidstrik282@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    emailjs.send("service_7ajc56h", "template_f21ihvr", {
+        name: name,
+        date: date,
+        location: location,
+        email: email,
+        phone: phone,
+        description: description
+    })
+    .then(function(response) {
+        alert('Your message has been sent successfully!', response.status, response.text);
+    }, function(error) {
+        alert('Failed to send your message. Please try again later.', error);
+    });
 });
