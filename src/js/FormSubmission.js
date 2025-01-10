@@ -1,3 +1,5 @@
+emailjs.init('x8loTAwaMYs4YEDfW')
+
 document.querySelector('form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -8,7 +10,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     const phone = document.getElementById('phone').value;
     const description = document.getElementById('description').value;
 
-    emailjs.send("service_7ajc56h", "template_f21ihvr", {
+    emailjs.send("service_7ajc56h","template_f21ihvr", {
         name: name,
         date: date,
         location: location,
