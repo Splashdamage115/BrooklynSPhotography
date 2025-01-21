@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="src/css/style.css">
+<title>Brooklyn S Photography</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="headerContent" class="headerContent">
+        <div class="box alignLeft">
+
+            <h1>
+                BrooklynSPhotography
+            </h1>
+        </div>
+        <div class="gap"></div>
+        <div class="box alignRight">
+        <nav>
+            <div class="menu-icon" id="menu-icon"> ☰ </div>
+            <ul class="nav-links" id="nav-links">
+                <li>
+                    <a href="index.html">Home</a></li> 
+                <li>
+                    <a href="aboutMe.html">About Me</a></li> 
+                <li>
+                    <a href="packages.html">Packages</a></li> 
+                <li>
+                    <a href="gallery.html">Gallery</a></li>
+                <li>
+                    <a href="contact.html">Contact</a></li> 
+            </ul>
+        </nav>
+    </div>
+    </div>
+
+
+    <div class="mainContent">
+        <br><br><br><br><br><br><br><br><br><br>
+        <p>
+            Please fill out the following form to contact me regarding your photography needs.<br>
+            If you have questions about my packages, availability, or any other inquiries, <br>
+            Do not hesitate to write it in the description box below, or contact me directly.<br>
+        </p>
+        <form action="/submit_contact_form" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="date">Wedding Date:</label><br>
+            <input type="date" id="date" name="date" required>
+            <br><br>
+
+            <label for="location">Location:</label><br>
+            <input type="text" id="location" name="location" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+        
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" required><br><br>
+
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <br><br><br>
+        <p>
+            <em>
+                If there are any issues with the form, please contact me directly using the information below.
+            </em><br>
+            Thank you for considering Brooklyn S Photography for your special day!
+        </p>
+    </div>
+
+    
+    <!-- Footer -->
+    <div id="footerContent">
+        <footer>
+            <div class="footer-container">
+                <div class="footer-row">
+                    <div class="footer-section">
+                        <h4>Find me on</h4>
+                        <p><a href="https://www.instagram.com/brookphts/" target="_blank"><img src="src/imgs/instagram-icon.png" alt="Instagram" style="width:20px;height:20px;"></a></p>
+                    </div>
+                </div>
+                <div class="footer-row">
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <p>Email: info@brooklynsphotography.com</p>
+                        <p>Phone: (123) 456-7890</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2019-2025 Brooklyn S Photography. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="src/js/script.js"></script> 
+<script src="src/js/FormSubmission.js"></script>
+</html>
