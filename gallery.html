@@ -1,74 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="src/css/style.css">
-<title>Brooklyn S Photography</title>
-</head>
-
-<body>
-    <!-- Header -->
-    <div id="headerContent" class="headerContent">
-        <div class="box alignLeft">
-
-            <h1>
-                BrooklynSPhotography
-            </h1>
-        </div>
-        <div class="gap"></div>
-        <div class="box alignRight">
-        <nav>
-            <div class="menu-icon" id="menu-icon"> ☰ </div>
-            <ul class="nav-links" id="nav-links">
-                <li>
-                    <a href="index.html">Home</a></li> 
-                <li>
-                    <a href="aboutMe.html">About Me</a></li> 
-                <li>
-                    <a href="packages.html">Packages</a></li> 
-                <li>
-                    <a href="gallery.html">Gallery</a></li>
-                <li>
-                    <a href="contact.html">Contact</a></li> 
-            </ul>
-        </nav>
-    </div>
-    </div>
-
-
-    <div class="mainContent">
-    <br><br><br><br><br>
-    <h1>Some Shots from my Recent photo shoots</h1>
-    <br><br><br><br><br>
-        <div id="imageContainer"></div>
-    </div>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wedding photography gallery showcasing elegant, timeless wedding moments. Browse through stunning wedding photographs by Brooklyn S Photography.">
+    <meta name="keywords" content="wedding photography gallery, wedding photos, bridal portraits, ceremony photos, reception photography">
+    <meta name="author" content="Brooklyn S Photography">
     
-    <!-- Footer -->
-    <div id="footerContent">
-        <footer>
-            <div class="footer-container">
-                <div class="footer-row">
-                    <div class="footer-section">
-                        <h4>Find me on</h4>
-                        <p><a href="https://www.instagram.com/brookphts/" target="_blank"><img src="src/imgs/instagram-icon.png" alt="Instagram" style="width:20px;height:20px;"></a></p>
-                    </div>
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="Wedding Photography Gallery - Brooklyn S Photography">
+    <meta property="og:description" content="Explore our stunning collection of wedding photography featuring romantic ceremonies, joyful celebrations, and intimate moments.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="gallery.html">
+    <meta property="og:image" content="imgs/9.jpg">
+    
+    <!-- Structured data for image gallery -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ImageGallery",
+        "name": "Wedding Photography Gallery",
+        "description": "Professional wedding photography gallery featuring elegant and timeless wedding moments",
+        "creator": {
+            "@type": "Person",
+            "name": "Brooklyn S"
+        },
+        "about": {
+            "@type": "Thing",
+            "name": "Wedding Photography"
+        }
+    }
+    </script>
+    
+    <title>Gallery - Brooklyn S Photography</title>
+    
+    <!-- Preconnect to Google Fonts for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Load Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Link to external CSS and JavaScript -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="header" role="banner">
+        <nav class="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html" aria-label="Brooklyn S Photography - Home">
+                        <h1 class="brand-name">Brooklyn S Photography</h1>
+                    </a>
                 </div>
-                <div class="footer-row">
-                    <div class="footer-section">
-                        <h4>Contact</h4>
-                        <p>Email: info@brooklynsphotography.com</p>
-                        <p>Phone: (123) 456-7890</p>
-                    </div>
+                
+                <ul class="nav-menu" role="menubar">
+                    <li role="none">
+                        <a href="index.html" class="nav-link" role="menuitem">Home</a>
+                    </li>
+                    <li role="none">
+                        <a href="gallery.html" class="nav-link active" role="menuitem" aria-current="page">Gallery</a>
+                    </li>
+                    <li role="none">
+                        <a href="contact.html" class="nav-link" role="menuitem">Contact</a>
+                    </li>
+                </ul>
+                
+                <!-- New Simple Mobile Menu -->
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                
+                <!-- Mobile Menu Overlay -->
+                <div class="mobile-menu-overlay"></div>
+                
+                <!-- Mobile Menu Panel -->
+                <div class="mobile-menu-panel">
+                    <button class="mobile-menu-close" aria-label="Close mobile menu">&times;</button>
+                    <nav class="mobile-nav" aria-label="Mobile navigation">
+                        <a href="index.html" class="mobile-nav-link">Home</a>
+                        <a href="gallery.html" class="mobile-nav-link active">Gallery</a>
+                        <a href="contact.html" class="mobile-nav-link">Contact</a>
+                    </nav>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2019-2025 Brooklyn S Photography. All rights reserved.</p>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header" aria-labelledby="gallery-title">
+            <div class="page-header-container">
+                <h1 id="gallery-title" class="page-title">Gallery</h1>
+                <p class="page-subtitle">A collection of beautiful wedding moments captured with love and artistry</p>
             </div>
-        </footer>
+        </section>
+
+        <!-- Gallery Grid -->
+        <section class="gallery-section" aria-label="Wedding photography gallery">
+            <div class="gallery-container">
+                <div class="masonry-grid" role="grid" aria-label="Wedding photography images">
+                    
+                    <!-- Row 1 -->
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/1.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/2.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/3.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/4.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+
+                    <!-- Row 2 -->
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/5.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/6.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/7.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/8.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+
+                    <!-- Row 3 -->
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/9.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/10.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/11.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/12.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+
+                    <!-- Row 4 -->
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/13.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/14.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/15.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/16.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+
+                    <!-- Row 5 -->
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/17.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/18.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/19.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/20.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+
+                    <!-- Row 6 -->
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/21.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/22.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/23.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/24.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+
+                    <!-- Row 7 -->
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/25.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/26.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/27.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/28.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+
+                    <!-- Row 8 -->
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/29.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                    
+                    <article class="gallery-item" role="gridcell">
+                        <img src="imgs/30.jpg"
+                             class="gallery-image"
+                             loading="lazy"
+                             data-lightbox="gallery">
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Lightbox Modal (hidden by default) -->
+    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-labelledby="lightbox-title">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+            <img id="lightbox-image" src="" alt="" class="lightbox-image">
+            <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+            <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+            <div class="lightbox-counter" aria-live="polite"></div>
+        </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <!-- Company Name & Tagline -->
+            <div class="footer-brand">
+                <h3 class="footer-logo">Brooklyn S Photography</h3>
+                <p class="footer-tagline">Capturing love stories with timeless elegance</p>
+            </div>
+            
+            <!-- Quick Navigation Links -->
+            <div class="footer-navigation">
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <ul class="footer-nav-links">
+                        <li><a href="index.html" class="footer-nav-link">Home</a></li>
+                        <li><a href="gallery.html" class="footer-nav-link">Gallery</a></li>
+                        <li><a href="contact.html" class="footer-nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <!-- Contact Information -->
+            <div class="footer-contact">
+                <h4 class="footer-section-heading">Contact</h4>
+                <p class="footer-email">
+                    <a href="mailto:Weddingsbybrooklyn@gmail.com">Weddingsbybrooklyn@gmail.com</a>
+                </p>
+                <p class="footer-phone">
+                    <a href="tel:+33684473433">+33 6 84 47 34 33</a>
+                </p>
+            </div>
+            
+            <!-- Social Media Links -->
+            <div class="footer-social">
+                <h4 class="footer-section-heading">Follow Us</h4>
+                <ul class="social-links" aria-label="Social media links">
+                    <li>
+                        <a href="https://www.instagram.com/brookphts/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Follow Brooklyn S Photography on Instagram"
+                           class="social-link">
+                            <span class="social-icon instagram">Instagram</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Copyright Notice -->
+        <div class="footer-bottom">
+            <p class="copyright">
+                &copy; 2025 Brooklyn S Photography. All rights reserved.
+            </p>
+        </div>
+    </footer>
 </body>
-<script src="src/js/script.js"></script>
-<script src="src/js/imagePusher.js"></script> 
 </html>

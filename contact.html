@@ -1,107 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="src/css/style.css">
-<title>Brooklyn S Photography</title>
-</head>
-
-<body>
-    <!-- Header -->
-    <div id="headerContent" class="headerContent">
-        <div class="box alignLeft">
-
-            <h1>
-                BrooklynSPhotography
-            </h1>
-        </div>
-        <div class="gap"></div>
-        <div class="box alignRight">
-        <nav>
-            <div class="menu-icon" id="menu-icon"> ☰ </div>
-            <ul class="nav-links" id="nav-links">
-                <li>
-                    <a href="index.html">Home</a></li> 
-                <li>
-                    <a href="aboutMe.html">About Me</a></li> 
-                <li>
-                    <a href="packages.html">Packages</a></li> 
-                <li>
-                    <a href="gallery.html">Gallery</a></li>
-                <li>
-                    <a href="contact.html">Contact</a></li> 
-            </ul>
-        </nav>
-    </div>
-    </div>
-
-
-    <div class="mainContent">
-        <br><br><br><br><br><br><br><br><br><br>
-        <p>
-            Please fill out the following form to contact me regarding your photography needs.<br>
-            If you have questions about my packages, availability, or any other inquiries, <br>
-            Do not hesitate to write it in the description box below, or contact me directly.<br>
-        </p>
-        <form action="/submit_contact_form" method="post">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-
-            <label for="date">Wedding Date:</label><br>
-            <input type="date" id="date" name="date" required>
-            <br><br>
-
-            <label for="location">Location:</label><br>
-            <input type="text" id="location" name="location" required><br><br>
-
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-        
-            <label for="phone">Phone Number:</label><br>
-            <input type="tel" id="phone" name="phone" required><br><br>
-
-            <label for="description">Description:</label><br>
-            <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
-
-            <input type="submit" value="Submit">
-        </form>
-
-        <br><br><br>
-        <p>
-            <em>
-                If there are any issues with the form, please contact me directly using the information below.
-            </em><br>
-            Thank you for considering Brooklyn S Photography for your special day!
-        </p>
-    </div>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Brooklyn S Photography for your wedding photography needs. Professional wedding photographer available worldwide for luxury weddings and special events.">
+    <meta name="keywords" content="contact wedding photographer, Brooklyn S Photography, wedding photography inquiry, luxury wedding photographer contact">
+    <meta name="author" content="Brooklyn S Photography">
     
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="Contact - Brooklyn S Photography">
+    <meta property="og:description" content="Get in touch to discuss your wedding photography needs. Professional service for luxury weddings worldwide.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="contact.html">
+    <meta property="og:image" content="imgs/2.jpg">
+    
+    <!-- Structured data for contact information -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "mainEntity": {
+            "@type": "ProfessionalService",
+            "name": "Brooklyn S Photography",
+            "description": "Professional wedding photography services",
+            "email": "Weddingsbybrooklyn@gmail.com",
+            "telephone": "+33-6-84-47-34-33",
+            "url": "#",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Europe",
+                "addressCountry": "EU"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "Customer Service",
+                "email": "Weddingsbybrooklyn@gmail.com",
+                "telephone": "+33-6-84-47-34-33",
+                "availableLanguage": ["English", "Spanish"]
+            },
+            "sameAs": [
+                "https://www.instagram.com/brookphts/"
+            ]
+        }
+    }
+    </script>
+    
+    <title>Contact - Brooklyn S Photography</title>
+    
+    <!-- Preconnect to Google Fonts for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Load Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <!-- Link to external CSS and JavaScript -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="header" role="banner">
+        <nav class="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html" aria-label="Brooklyn S Photography - Home">
+                        <h1 class="brand-name">Brooklyn S Photography</h1>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu" role="menubar">
+                    <li role="none">
+                        <a href="index.html" class="nav-link" role="menuitem">Home</a>
+                    </li>
+                    <li role="none">
+                        <a href="gallery.html" class="nav-link" role="menuitem">Gallery</a>
+                    </li>
+                    <li role="none">
+                        <a href="contact.html" class="nav-link active" role="menuitem" aria-current="page">Contact</a>
+                    </li>
+                </ul>
+                
+                <!-- New Simple Mobile Menu -->
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                
+                <!-- Mobile Menu Overlay -->
+                <div class="mobile-menu-overlay"></div>
+                
+                <!-- Mobile Menu Panel -->
+                <div class="mobile-menu-panel">
+                    <button class="mobile-menu-close" aria-label="Close mobile menu">&times;</button>
+                    <nav class="mobile-nav" aria-label="Mobile navigation">
+                        <a href="index.html" class="mobile-nav-link">Home</a>
+                        <a href="gallery.html" class="mobile-nav-link">Gallery</a>
+                        <a href="contact.html" class="mobile-nav-link active">Contact</a>
+                    </nav>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header" aria-labelledby="contact-title">
+            <div class="page-header-container">
+                <h1 id="contact-title" class="page-title">Let's Connect</h1>
+                <p class="page-subtitle">I'd love to hear about your special day and discuss how we can create beautiful memories together</p>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="contact-form-section" aria-labelledby="form-heading">
+            <div class="contact-container">
+                <div class="form-intro">
+                    <h2 id="form-heading" class="form-title">Tell Me About Your Wedding</h2>
+                    <p class="form-description">
+                        Please share some details about your wedding day, and I'll get back to you soon with information about availability and packages.
+                    </p>
+                </div>
+
+                <form id="contact-form" class="contact-form" novalidate aria-label="Wedding photography inquiry form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name *</label>
+                            <input type="text" 
+                                   id="name" 
+                                   name="name" 
+                                   class="form-input" 
+                                   required 
+                                   aria-describedby="name-error"
+                                   autocomplete="name">
+                            <span id="name-error" class="error-message" aria-live="polite"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="partner-name" class="form-label">Partner's Name</label>
+                            <input type="text" 
+                                   id="partner-name" 
+                                   name="partner-name" 
+                                   class="form-input"
+                                   autocomplete="name">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" 
+                                   id="email" 
+                                   name="email" 
+                                   class="form-input" 
+                                   required 
+                                   aria-describedby="email-error"
+                                   autocomplete="email">
+                            <span id="email-error" class="error-message" aria-live="polite"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" 
+                                   id="phone" 
+                                   name="phone" 
+                                   class="form-input"
+                                   autocomplete="tel">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="event-date" class="form-label">Wedding Date</label>
+                            <input type="date" 
+                                   id="event-date" 
+                                   name="event-date" 
+                                   class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="venue" class="form-label">Wedding Venue</label>
+                            <input type="text" 
+                                   id="venue" 
+                                   name="venue" 
+                                   class="form-input"
+                                   placeholder="Location or venue name">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guest-count" class="form-label">Estimated Guest Count</label>
+                            <select id="guest-count" name="guest-count" class="form-select">
+                                <option value="">Select guest count</option>
+                                <option value="intimate">Intimate (1-50 guests)</option>
+                                <option value="medium">Medium (51-100 guests)</option>
+                                <option value="large">Large (101-200 guests)</option>
+                                <option value="very-large">Very Large (200+ guests)</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+
+
+                    <div class="form-group full-width">
+                        <label for="message" class="form-label">Tell Me About Your Love Story *</label>
+                        <textarea id="message" 
+                                  name="message" 
+                                  class="form-textarea" 
+                                  rows="6" 
+                                  required 
+                                  aria-describedby="message-error"
+                                  placeholder="Share your love story, wedding vision, or any specific photography requests..."></textarea>
+                        <span id="message-error" class="error-message" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="how-heard" class="form-label">How Did You Hear About Brooklyn S Photography?</label>
+                        <select id="how-heard" name="how-heard" class="form-select">
+                            <option value="">Please select</option>
+                            <option value="google">Google Search</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="referral">Friend/Family Referral</option>
+                            <option value="vendor">Wedding Vendor Referral</option>
+                            <option value="venue">Wedding Venue Referral</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-button" aria-describedby="submit-info">
+                            <span class="submit-text">Send Message</span>
+                            <span class="submit-loading" style="display: none;">Sending...</span>
+                        </button>
+                        <p id="submit-info" class="submit-note">
+                            I'll get back to you with availability and package information
+                        </p>
+                    </div>
+
+                    <!-- Form Status Messages -->
+                    <div id="form-status" class="form-status" aria-live="polite" style="display: none;">
+                        <div class="status-message"></div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Business Information Section -->
+        <section class="business-info" aria-labelledby="business-heading">
+            <div class="business-container">
+                <h2 id="business-heading" class="business-title">Get In Touch</h2>
+                
+                <div class="business-details">
+                    <div class="contact-method">
+                        <h3 class="contact-method-title">Email</h3>
+                        <p class="contact-method-info">
+                            <a href="mailto:Weddingsbybrooklyn@gmail.com"
+                               class="contact-link"
+                               aria-label="Send email to Brooklyn S Photography">
+                                Weddingsbybrooklyn@gmail.com
+                            </a>
+                        </p>
+                        <p class="contact-method-note">Best for detailed inquiries and sending inspiration photos</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <h3 class="contact-method-title">Phone</h3>
+                        <p class="contact-method-info">
+                            <a href="tel:+33684473433"
+                               class="contact-link"
+                               aria-label="Call Brooklyn S Photography">
+                                +33 6 84 47 34 33
+                            </a>
+                        </p>
+                        <p class="contact-method-note">For quick questions and urgent inquiries</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <h3 class="contact-method-title">Location</h3>
+                        <p class="contact-method-info">
+                            Available across Europe
+                        </p>
+                        <p class="contact-method-note">Capturing love stories throughout Europe</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Social Media Section -->
+        <section class="social-section" aria-labelledby="social-heading">
+            <div class="social-container">
+                <h2 id="social-heading" class="social-title">Follow the Journey</h2>
+                <p class="social-description">
+                    Stay connected and see the latest wedding stories, behind-the-scenes moments, and photography inspiration.
+                </p>
+                
+                <div class="social-grid">
+                    <a href="https://www.instagram.com/brookphts/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="social-card"
+                       aria-label="Follow Brooklyn S Photography on Instagram">
+                        <div class="social-icon-large instagram"></div>
+                        <h3 class="social-platform">Instagram</h3>
+                        <p class="social-handle">@brookphts</p>
+                        <p class="social-description">Daily inspiration and recent work</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
     <!-- Footer -->
-    <div id="footerContent">
-        <footer>
-            <div class="footer-container">
-                <div class="footer-row">
-                    <div class="footer-section">
-                        <h4>Find me on</h4>
-                        <p><a href="https://www.instagram.com/brookphts/" target="_blank"><img src="src/imgs/instagram-icon.png" alt="Instagram" style="width:20px;height:20px;"></a></p>
-                    </div>
-                </div>
-                <div class="footer-row">
-                    <div class="footer-section">
-                        <h4>Contact</h4>
-                        <p>Email: info@brooklynsphotography.com</p>
-                        <p>Phone: (123) 456-7890</p>
-                    </div>
-                </div>
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <!-- Company Name & Tagline -->
+            <div class="footer-brand">
+                <h3 class="footer-logo">Brooklyn S Photography</h3>
+                <p class="footer-tagline">Capturing love stories with timeless elegance</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2019-2025 Brooklyn S Photography. All rights reserved.</p>
+            
+            <!-- Quick Navigation Links -->
+            <div class="footer-navigation">
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <ul class="footer-nav-links">
+                        <li><a href="index.html" class="footer-nav-link">Home</a></li>
+                        <li><a href="gallery.html" class="footer-nav-link">Gallery</a></li>
+                        <li><a href="contact.html" class="footer-nav-link">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-        </footer>
-    </div>
+            
+            <!-- Contact Information -->
+            <div class="footer-contact">
+                <h4 class="footer-section-heading">Contact</h4>
+                <p class="footer-email">
+                    <a href="mailto:Weddingsbybrooklyn@gmail.com">Weddingsbybrooklyn@gmail.com</a>
+                </p>
+                <p class="footer-phone">
+                    <a href="tel:+33684473433">+33 6 84 47 34 33</a>
+                </p>
+            </div>
+            
+            <!-- Social Media Links -->
+            <div class="footer-social">
+                <h4 class="footer-section-heading">Follow Us</h4>
+                <ul class="social-links" aria-label="Social media links">
+                    <li>
+                        <a href="https://www.instagram.com/brookphts/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Follow Brooklyn S Photography on Instagram"
+                           class="social-link">
+                            <span class="social-icon instagram">Instagram</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Copyright Notice -->
+        <div class="footer-bottom">
+            <p class="copyright">
+                &copy; 2025 Brooklyn S Photography. All rights reserved.
+            </p>
+        </div>
+    </footer>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script src="src/js/script.js"></script> 
-<script src="src/js/FormSubmission.js"></script>
 </html>
